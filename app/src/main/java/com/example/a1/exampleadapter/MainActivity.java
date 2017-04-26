@@ -1,14 +1,13 @@
 package com.example.a1.exampleadapter;
 
+import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -36,31 +35,32 @@ public class MainActivity extends AppCompatActivity {
 
         lvMain.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemClick(AdapterView<?> adapterView, View view, final int i, long l) {
+                final Dialog dialog = new Dialog(context);
+                dialog.setContentView(R.layout.dialog_get_names);
 
-                LayoutInflater li = LayoutInflater.from(context);
-                View prv = li.inflate(R.layout.dialog_get_names,null);
+                dialog.show();
 
-                AlertDialog.Builder mDialoGbulder = new AlertDialog.Builder(context);
+                final EditText ed1 = (EditText) dialog.findViewById(R.id.ed1);
+                final EditText ed2 = (EditText) dialog.findViewById(R.id.edi2);
+                Button cancel =(Button)dialog.findViewById(R.id.cancel);
+                Button ok =(Button)dialog.findViewById(R.id.ok);
 
-                final EditText ed1 = (EditText) prv.findViewById(R.id.ed1);
-                final EditText ed2 = (EditText) prv.findViewById(R.id.edi2);
-
-                mDialoGbulder.setCancelable(false).setPositiveButton("EEHHHUU", new DialogInterface.OnClickListener() {
+                ok.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                       // ap.set(i,ed1.getText().toString(),ed2.getText().toString()));//new Product(ed1.getText().toString(),ed2.getText().toString()));
+                    public void onClick(View v) {
                         ap.set(i,new Product(ed1.getText().toString(),ed2.getText().toString()));
                         boxAdapter.notifyDataSetChanged();
-                    }
-                }).setNegativeButton("К ЧЕРТУ!", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
+                        dialog.dismiss();
                     }
                 });
-                AlertDialog alertDialog = mDialoGbulder.create();
-                alertDialog.show();
+
+                cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
             }
         });
 
@@ -78,13 +78,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-  public void addToList(View view ){
+    public void addToList(View view ){
         ap.add(new Product("something","something"));
         Toast.makeText(this,String.valueOf(ap.size()),Toast.LENGTH_SHORT).show();
         boxAdapter.notifyDataSetChanged();
     }
-
-
-
 
 }

@@ -7,10 +7,14 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.TreeMap;
 
 public class Main2Activity extends AppCompatActivity {
-    static ArrayList<Product> ap = new ArrayList<Product>();
+    ArrayList<Product> ap = new ArrayList<Product>();
     BoxAdapter boxAdapter;
+//egor
+    TreeMap<Integer,Product> values = new TreeMap<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,4 +32,10 @@ public class Main2Activity extends AppCompatActivity {
         Toast.makeText(this,String.valueOf(ap.size()),Toast.LENGTH_SHORT).show();
         boxAdapter.notifyDataSetChanged();
     }
+
+
+    /*public void loxDectection(int a){
+        if (values.containsKey(a) == false )
+            values.put(a,)
+    }*/
 }

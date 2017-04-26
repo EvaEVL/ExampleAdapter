@@ -17,12 +17,32 @@
             android:paddingBottom="5dp"
             android:id="@+id/ed1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:inputType="none">
+            android:layout_height="wrap_content">
     </EditText>
 
     <EditText
             android:id="@+id/edi2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:inputType="none">
+            android:layout_height="wrap_content">
     </EditText>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <Button
+                android:text="Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/ok"
+                android:layout_weight="1" />
+
+        <Button
+                android:text="Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/cancel"
+                android:layout_weight="1" />
+    </LinearLayout>
 </LinearLayout>
