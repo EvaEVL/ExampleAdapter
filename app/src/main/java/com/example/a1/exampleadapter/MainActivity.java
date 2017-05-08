@@ -15,8 +15,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    static int what_i_get ;
-    static ArrayList<Product> ap = new ArrayList<Product>();
+
+    static String what_i_get ;
+    ArrayList<Product> ap = new ArrayList<Product>();
     BoxAdapter boxAdapter;
 
     final Context context = this;
@@ -26,11 +27,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         boxAdapter = new BoxAdapter(this,ap);
 
-        ListView lvMain = (ListView) findViewById(R.id.lvMein);
+        ListView lvMain = (ListView) findViewById(R.id.lvMein);	
         lvMain.setAdapter(boxAdapter);
 
         lvMain.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -68,8 +67,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(MainActivity.this,Main2Activity.class);
-                what_i_get = i;
-
+                Product product = ap.get(i);
+                what_i_get = product.name;
                 startActivity(intent);
                 return false;
             }

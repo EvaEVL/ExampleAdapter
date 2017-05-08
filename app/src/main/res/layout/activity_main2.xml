@@ -18,12 +18,29 @@
 
     </ListView>
 
-    <Button
+    <LinearLayout
+            android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="5dp"
-            android:onClick="addToList1"
-            android:text="@string/add"
-    />
+            android:layout_height="match_parent">
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:onClick="addToList1"
+                android:text="@string/add"
+                android:gravity="center"/>
+        <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:onClick="go_Back"
+                android:text="Назад"
+        />
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="play shit"
+                android:onClick="playShit"
+                android:id="@+id/button" android:layout_marginTop="10dp"/>
+    </LinearLayout>
 </LinearLayout>

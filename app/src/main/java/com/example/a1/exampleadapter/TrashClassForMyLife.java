@@ -1,34 +1,15 @@
 package com.example.a1.exampleadapter;
 
+
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class TrashClassForMyLife {
-    private ArrayList<String> arrRushWords  = new ArrayList<>();
-    private ArrayList<String> arrEnglhWords  = new ArrayList<>();
-
-    TrashClassForMyLife(ArrayList<String> a ,ArrayList<String> b){
-        arrEnglhWords = b;
-        arrRushWords = a;
-    }
 
 
-    public ArrayList<String> getArrRushWords() {
-        return arrRushWords;
-    }
-
-    public void setArrRushWords(ArrayList<String> arrRushWords) {
-        this.arrRushWords = arrRushWords;
-    }
-
-    public ArrayList<String> getArrEnglhWords() {
-        return arrEnglhWords;
-    }
-
-    public void setArrEnglhWords(ArrayList<String> arrEnglhWords) {
-        this.arrEnglhWords = arrEnglhWords;
-    }
-
-
-
+    //static ArrayList<Product> ap = new ArrayList<Product>();
+   // static  Map<String,ArrayList<Product>> values = new TreeMap();
+    //static ArrayList<Product> arrayAdapter_list = new ArrayList<Product>();
 
 }
