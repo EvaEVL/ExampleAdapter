@@ -39,8 +39,8 @@
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="play shit"
-                android:onClick="playShit"
+                android:text="play"
+                android:onClick="play"
                 android:id="@+id/button" android:layout_marginTop="10dp"/>
     </LinearLayout>
 </LinearLayout>

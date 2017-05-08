@@ -52,9 +52,4 @@ public class BoxAdapter extends BaseAdapter{
         return ((Product) getItem(position));
     }
 
-
-
-
-
-
 }
