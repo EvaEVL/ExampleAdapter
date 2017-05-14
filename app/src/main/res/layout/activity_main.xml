@@ -12,26 +12,30 @@
         tools:context="com.example.a1.exampleadapter.MainActivity"
     android:orientation="vertical">
 
-    <ListView
-            android:visibility="visible"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:id="@+id/lvMein">
-
-    </ListView>
-
-    <android.support.design.widget.FloatingActionButton
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
-        android:clickable="true"
-        android:layout_gravity="center"
-        app:fabSize="normal"
-        android:onClick="addToList"
-    app:srcCompat="@drawable/ysk_ic_error"
-        android:id="@+id/floatingActionButton2"
-        app:elevation="14dp"
-        android:layout_weight="1" />
+        <ListView
+                android:visibility="visible"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/lvMein">
+
+            <android.support.design.widget.FloatingActionButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:layout_gravity="center|bottom"
+                app:fabSize="normal"
+                android:onClick="addToList"
+            app:srcCompat="@drawable/ysk_ic_error"
+                android:id="@+id/floatingActionButton2"
+                app:elevation="14dp"
+                android:layout_weight="1" />
+        </ListView>
+    </android.support.design.widget.CoordinatorLayout>
 
 </LinearLayout>

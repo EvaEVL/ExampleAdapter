@@ -8,16 +8,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
-import com.example.a1.exampleadapter.BoxAdapter;
-import com.example.a1.exampleadapter.Product;
-import com.example.a1.exampleadapter.R;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -27,14 +22,14 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
-    static String what_i_get ;
+    ArrayList<Product> apLib = new ArrayList<Product>();
+    static int what_i_get ;
     ArrayList<Product> ap;
     public BoxAdapter boxAdapter;
 
     private static final String TAG = "onPause";
     private static final String TAG1 = "onResume";
-    //ArrayAdapter adapter;
+
     final Context context = this;
 
     public static final String SAVE_ARRAY_AP = "array_ap.txt";
@@ -44,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_2,ap); 
         if (loadFromFile(context) == null) {
             ap = new ArrayList<Product>();
         } else {
@@ -72,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         ap.set(i, new Product(ed1.getText().toString(), ed2.getText().toString()));
                         boxAdapter.notifyDataSetChanged();
-//adapter.notifyDataSetChanged();
                         dialog.dismiss();
                     }
                 });
@@ -92,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(MainActivity.this, Main2Activity.class);
                 Product product = ap.get(i);
-                what_i_get = product.name;
+                what_i_get = i;
                 startActivity(intent);
                 return false;
             }
@@ -101,12 +94,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void addToList(View view ){
         ap.add(new Product("some","something"));
+        Main2Activity.arrLib.add(apLib);
         boxAdapter.notifyDataSetChanged();
         Toast.makeText(this,String.valueOf(ap.size()),Toast.LENGTH_SHORT).show();
-    }
-
-    public void onPostAdd(){
-
     }
 
     @Override
