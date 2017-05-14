@@ -11,7 +11,6 @@ public class ThreadPlayVoice implements Runnable ,VocalizerListener {
     Vocalizer vocalizer;
     static final String API_KEY_YANDEX = "670655db-edd8-4ee5-b3b7-e9d47ec78ed8";
     ArrayList<Product> ap = new ArrayList<Product>();
-    boolean b = true;
 
     ThreadPlayVoice(ArrayList<Product> ap) {
         this.ap = ap;
@@ -75,6 +74,7 @@ public class ThreadPlayVoice implements Runnable ,VocalizerListener {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            playvoice(Integer.toString(i));
         }
     }
 }

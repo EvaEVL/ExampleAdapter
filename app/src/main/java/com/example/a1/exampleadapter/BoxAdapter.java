@@ -43,7 +43,7 @@ public class BoxAdapter extends BaseAdapter{
 
         Product p = (Product) getItem(i);
         ((TextView) view.findViewById(R.id.tbD)).setText(p.name);
-        ((TextView) view.findViewById(R.id.tvPrice)).setText(p.price + "");
+        ((TextView) view.findViewById(R.id.tvPrice)).setText(p.price);
 
         return view;
     }

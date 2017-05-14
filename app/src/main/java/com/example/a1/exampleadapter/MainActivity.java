@@ -24,7 +24,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     ArrayList<Product> apLib = new ArrayList<Product>();
     static int what_i_get ;
-    ArrayList<Product> ap;
+    static ArrayList<Product> ap;
     public BoxAdapter boxAdapter;
 
     private static final String TAG = "onPause";
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void addToList(View view ){
         ap.add(new Product("some","something"));
-        Main2Activity.arrLib.add(apLib);
+        //  Main2Activity..add(apLib);
         boxAdapter.notifyDataSetChanged();
         Toast.makeText(this,String.valueOf(ap.size()),Toast.LENGTH_SHORT).show();
     }
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private static void saveToFile(ArrayList<Product> aP, Context context) {
+    static void saveToFile(ArrayList<Product> aP, Context context) {
         try {
             Log.d("FILE_DIR", context.getFilesDir().toString());
             FileOutputStream fos = new FileOutputStream(context.getFilesDir().toString() + "/" + SAVE_ARRAY_AP);

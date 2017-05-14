@@ -29,13 +29,15 @@
                 android:onClick="addToList1"
                 android:text="@string/add"
                 android:gravity="center"/>
+
         <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:onClick="go_Back"
                 android:text="Назад"
-        />
+            android:id="@+id/button2" />
+
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
