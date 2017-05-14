@@ -14,7 +14,7 @@ public class BoxAdapter extends BaseAdapter{
     LayoutInflater lf;
     ArrayList<Product> obj;
 
-    BoxAdapter(Context con,ArrayList<Product> products){
+    public BoxAdapter(Context con, ArrayList<Product> products){
         ctx = con;
         obj = products;
         lf = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -38,18 +38,13 @@ public class BoxAdapter extends BaseAdapter{
     public View getView(int i, View cview, ViewGroup viewGroup) {
         View view = cview;
         if(view == null){
-            view = lf.inflate(R.layout.item,viewGroup,false);
+            view = lf.inflate(R.layout.item_wat,viewGroup,false);
         }
 
-        Product p = getPrduct(i);
+        Product p = (Product) getItem(i);
         ((TextView) view.findViewById(R.id.tbD)).setText(p.name);
         ((TextView) view.findViewById(R.id.tvPrice)).setText(p.price + "");
 
         return view;
     }
-
-    Product getPrduct(int position) {
-        return ((Product) getItem(position));
-    }
-
 }
