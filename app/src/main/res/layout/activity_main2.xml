@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.a1.exampleadapter.Main2Activity">
+
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        tools:context="com.example.a1.exampleadapter.Main2Activity">
-
+        android:layout_weight="1">
     <ListView
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -18,31 +22,43 @@
 
     </ListView>
 
-    <LinearLayout
-            android:orientation="vertical"
+        <com.getbase.floatingactionbutton.FloatingActionsMenu
+            android:id="@+id/fab_menu"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
-        <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:onClick="addToList1"
-                android:text="@string/add"
-                android:gravity="center"/>
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            fab:fab_addButtonColorNormal="@color/colorPrimary"
+            fab:fab_addButtonColorPressed="@color/colorPrimaryDark"
+            fab:fab_addButtonPlusIconColor="@color/colorAccent"
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"/>
 
-        <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:onClick="go_Back"
-                android:text="Назад"
-            android:id="@+id/button2" />
+        <com.getbase.floatingactionbutton.FloatingActionButton
+        android:id="@+id/action_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        fab:fab_colorNormal="@color/colorAccent"
+        fab:fab_title="Action A"
+        fab:fab_colorPressed="@color/colorPrimaryDark"/>
 
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="play"
-                android:onClick="play"
-                android:id="@+id/button" android:layout_marginTop="10dp"/>
-    </LinearLayout>
+        <com.getbase.floatingactionbutton.FloatingActionButton
+        android:id="@+id/action_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        fab:fab_colorNormal="@color/colorAccent"
+        fab:fab_title="Action A"
+        fab:fab_colorPressed="@color/colorPrimaryDark"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+        android:id="@+id/action_c"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        fab:fab_colorNormal="@color/colorAccent"
+        fab:fab_title="Action A"
+        fab:fab_colorPressed="@color/colorPrimaryDark"/>
+
+    </android.support.design.widget.CoordinatorLayout>
 </LinearLayout>
